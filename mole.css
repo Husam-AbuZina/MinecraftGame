@@ -1,49 +1,114 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     background: url("./forest.jpg");
-    background-size:cover;
+    background-size: cover;
 }
 
-#board{
-    width: 540px;
-    height: 540px;
-    background-color:blue;
-
-    margin: 0 auto;
+.container {
     display: flex;
-    flex-wrap:wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-    background: url(./minecraftBlock.jpg);
-    background-size:cover;
-    border:3px solid white;
-    border-radius: 20px;
+.top-left-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 100px;
+    /* background-color: #f2f2f2; */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.top-right-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.countDown {
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin: 0;
+    height: 70px;
+    width: 200px;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 #score {
     color: white;
+    margin-bottom: 10px;
 }
 
 h1 {
     color: white;
 }
 
-#board div{
+h2 {
+    color: white;
+}
+
+.highScore {
+    color: white;
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    background-color: blue;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url(./minecraftBlock.jpg);
+    background-size: cover;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+#board div {
     /* board = 540*540, divide into 3*3 tiles ---> 180px per div */
-    width:180px;
+    width: 180px;
     height: 180px;
     background-image: url(./grassBlock.png);
     background-size: cover;
 }
 
-#board div img{
-    /* all img tags inside the tile divs // make the mole small to fit upove the pipes insteadof taking the size of a titan  */
-    width:100px;
-    height:100px;
-
-    user-select: none; /* Make the images un dragable nor the blue cover on them appear when clicking and dragging them */
+#board div img {
+    /* all img tags inside the tile divs // make the mole small to fit above the pipes instead of taking the size of a titan  */
+    width: 100px;
+    height: 100px;
+    user-select: none; /* Make the images undraggable nor the blue cover on them appear when clicking and dragging them */
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
-    -ms-user-sellect: none;     
+    -ms-user-sellect: none;
+}
+
+.chest_icon {
+    height: 80px;
+    Width: 80px;
+    margin-right: 100px;
+}
+
+.goldPiece {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.score-gold-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
 }

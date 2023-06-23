@@ -4,6 +4,14 @@ let score =0;
 let gameOver = false;
 
 
+//  ----------------------- Timer ----------------------- || Variables for the Timer 
+const startingMinutes = 1;
+let time = startingMinutes * 60;
+
+const countdownEl = document.getElementById('countdown');
+// ----------------------- Timer -----------------------
+
+
 
 window.onload = function(){
     setGame();
@@ -21,6 +29,16 @@ function setGame(){
         document.getElementById("board").appendChild(tile);
     }
 
+    function updateCountdown() {
+        const minutes = Math.floor(time/60);
+        let seconds = time % 60;
+    
+        countdownEl.innerHTML = `${minutes}: ${seconds}`;
+        time--;
+    }   
+    setInterval(updateCountdown, 1000);
+
+
     setInterval(setMole, 1000); // 1000 milliseconds - 1 seconds
     setInterval(setPlant, 2000); // 2000 milliseconds - 2 seconds
 }
@@ -34,7 +52,6 @@ function getRandomTile() {
 function setMole(){
 
     if(gameOver) { //stop the player from interacting with the websites
-        // alert('You Are Killed  :O');
         return;
     }
 
@@ -58,7 +75,6 @@ function setMole(){
 function setPlant(){
     
     if(gameOver) { //stop the player from interacting with the websites
-        // alert('You Are Killed  :O');
         return;;
     }
 
@@ -83,13 +99,16 @@ function setPlant(){
 function selectTile() {
 
     if(gameOver) { //stop the player from interacting with the websites
-        // alert('You Are Killed  :O');
         return;;
     }
 
     if(this == currentMoleTile) {
         score += 10;
         document.getElementById("score").innerText = score.toString(); // update the score
+        if (highScore <= score){
+            highScore = score;
+        }
+        document.getElementById("score")
     }
     else if (this == currentPlantTile) {
         document.getElementById("score").innerText = "GAME OVER: " + score.toString();
