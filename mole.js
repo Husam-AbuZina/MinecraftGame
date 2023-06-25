@@ -2,7 +2,8 @@ let currentMoleTile;
 let currentPlantTile;
 let score =0;
 let gameOver = false;
-
+let highScore = 0
+    
 
 //  ----------------------- Timer ----------------------- || Variables for the Timer 
 const startingMinutes = 1;
@@ -52,7 +53,9 @@ function getRandomTile() {
 function setMole(){
 
     if(gameOver) { //stop the player from interacting with the websites
-        return;
+        // alert('You Are Killed  :O');
+        // score = 0;
+        // return;
     }
 
     if(currentMoleTile){
@@ -75,7 +78,9 @@ function setMole(){
 function setPlant(){
     
     if(gameOver) { //stop the player from interacting with the websites
-        return;;
+        // alert('You Are Killed  :O');
+        // score = 0;
+        // return;
     }
 
     if(currentPlantTile){
@@ -99,20 +104,23 @@ function setPlant(){
 function selectTile() {
 
     if(gameOver) { //stop the player from interacting with the websites
-        return;;
+        // alert('You Are Killed  :O');
+        // score = 0;
+        // return;
     }
 
     if(this == currentMoleTile) {
         score += 10;
         document.getElementById("score").innerText = score.toString(); // update the score
-        if (highScore <= score){
-            highScore = score;
-        }
-        document.getElementById("score")
     }
     else if (this == currentPlantTile) {
         document.getElementById("score").innerText = "GAME OVER: " + score.toString();
-        gameOver = true;
+        if (highScore <= score){
+            highScore = score;
+            document.getElementById("highScore").innerText = highScore.toString(); // update the highScore
+        }
+        // gameOver = true;
+        score = 0;
     }
 
 }
