@@ -6,10 +6,28 @@ let highScore = 0
     
 
 //  ----------------------- Timer ----------------------- || Variables for the Timer 
-const startingMinutes = 1;
-let time = startingMinutes * 60;
+const startingMinutes = 2; 
+let time = 3; //startingMinutes * 60; // This makes the timer look smooth at the beginning.
 
 const countdownEl = document.getElementById('countdown');
+let countdownInterval;
+
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    countdownEl.innerHTML = `${minutes}:${seconds}`;
+
+    if (time <= 0) {
+        clearInterval(countdownInterval);
+        // Timer reached zero, do something here
+        countdownEl.innerHTML = "0:00";
+        gameOver = true;
+    } else {
+        time--;
+    }
+}  
+// Start the interval
+countdownInterval = setInterval(updateCountdown, 1000);
 // ----------------------- Timer -----------------------
 
 
@@ -27,21 +45,16 @@ function setGame(){
         
         tile.addEventListener("click", selectTile);
 
-        document.getElementById("board").appendChild(tile);
+        document.getElementById("board").appendChild(tile); 
     }
 
-    function updateCountdown() {
-        const minutes = Math.floor(time/60);
-        let seconds = time % 60;
+
     
-        countdownEl.innerHTML = `${minutes}: ${seconds}`;
-        time--;
-    }   
-    setInterval(updateCountdown, 1000);
+    // Call the updateCountdown function once to start the timer
+    updateCountdown();
 
-
-    setInterval(setMole, 1000); // 1000 milliseconds - 1 seconds
-    setInterval(setPlant, 2000); // 2000 milliseconds - 2 seconds
+    setInterval(setMole, 1000); // 1000 milliseconds - 1 seconds.
+    setInterval(setPlant, 2000); // 2000 milliseconds - 2 seconds.
 }
 
 function getRandomTile() {
@@ -55,7 +68,7 @@ function setMole(){
     if(gameOver) { //stop the player from interacting with the websites
         // alert('You Are Killed  :O');
         // score = 0;
-        // return;
+        return;
     }
 
     if(currentMoleTile){
@@ -80,7 +93,7 @@ function setPlant(){
     if(gameOver) { //stop the player from interacting with the websites
         // alert('You Are Killed  :O');
         // score = 0;
-        // return;
+        return;
     }
 
     if(currentPlantTile){
@@ -106,7 +119,7 @@ function selectTile() {
     if(gameOver) { //stop the player from interacting with the websites
         // alert('You Are Killed  :O');
         // score = 0;
-        // return;
+        return;
     }
 
     if(this == currentMoleTile) {
