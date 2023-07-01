@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="vewiport" content="width=device-width, initial-scale=1.0">
-        <title>Whack a Mole</title>
+        <title>Minecraft's Gold </title>
         <link rel="stylesheet" href="mole.css">
         
     </head>
@@ -13,17 +13,30 @@
             <div class="top-right-box">
                 <p id="countdown" class="countDown">2:00</p>
             </div>
-            <h1>Whack a Mole</h1>
+            <h1>Minecraft - Gold Edition</h1>
             <div class="score-container">
                 <div class="score-gold-container">
                     <h2 id="score">0</h2>
-                    <img class="goldPiece" src="./gold.png" alt="Gold">
+                    <img class="goldPiece" src="./gold.png" alt="Gold" onclick="show_pup()">
                 </div>
                 <h2 class="highScore">High Score: <span id="highScore">0</span></h2>
             </div>
             <!-- 3*3 board -->
             <div id="board"></div>
         </div>
+
+            <div class="card" id="pup">
+                <img src="creeper.png" alt="img">
+                <h1 class="puph2" >Game Over</h1>
+                <h2 class="puph2" class="highScore">High Score: <span id="highScorepup">0</span></h2>
+                <p>Great Job!</p> 
+                <!-- make IF statement depending on the score collection -->
+                <div class="replay-button">
+                    <button class="btn-close" onclick="hide_pup()">Replay</button>
+                </div>
+            </div>
+
+
         <script src="mole.js"></script>
     </body>
 </html>

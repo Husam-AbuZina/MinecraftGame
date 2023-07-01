@@ -12,6 +12,8 @@ body {
     justify-content: center;
 }
 
+
+
 .top-left-box {
     position: absolute;
     top: 10px;
@@ -38,6 +40,7 @@ body {
     margin: 0;
     height: 70px;
     width: 200px;
+    border-radius: 10px;
 }
 
 .score-container {
@@ -111,4 +114,77 @@ h2 {
 .score-gold-container {
     display: flex;
     align-items: center; /* Aligns items vertically */
+}
+
+
+/************************************************** Pop Up  *****************************************************/
+
+.puph2 {
+    color: black;
+}
+
+.containerP {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0066ae;
+}
+
+.btn-send {
+    border: 0;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 60px;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgb(0 0 0/15%);
+    padding: 1em;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    text-align: center;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+    opacity: 0;
+}
+.card.open {
+    opacity: 1;
+    top:50%;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    /* border-radius: 50px; */
+    margin-top: -50px;
+}
+
+.card h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card .btn-close {
+    width: 100%;
+    border-radius: 50px;
+    border: 0;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #31ff5a;
+    color: #000000;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.replay-button {
+    display: flex;
+    flex-direction: row;
 }
