@@ -26,6 +26,13 @@ function updateCountdown() {
         // Timer reached zero, do something here
         countdownEl.innerHTML = "0:00";
         gameOver = true;
+        if (highScore <= score){
+            highScore = score;
+            highScorepup = score;
+            document.getElementById("highScore").innerText = highScore.toString(); // update the highScore
+            document.getElementById("highScorepup").innerText = highScorepup.toString();
+        }
+        show_pup()
     } else {
         time--;
     }
