@@ -59,13 +59,24 @@ function hide_pup() {
 // ----------------------- Popup -----------------------
 
 
+
+// ----------------------- Sound Effects  -----------------------
+
+// window.addEventListener("click", () => {
+//     document.getElementById("background2_sound").play();
+// });
+
+// document.getElementById("goldPiece").addEventListener("click", () => {
+//     document.getElementById("background2_sound").play();
+//   });
+  
+// ----------------------- Sound Effects -----------------------
+
 window.onload = function(){
-        setGame();
+    setGame();
 }
 
 function setGame(){
-
-  
 
     //set up the grid for the game board in html
     for(let i = 0; i < 9; i++){ // i is going from 0 ---> 8, stops at 9
@@ -79,7 +90,6 @@ function setGame(){
     }
 
 
-    
     // Call the updateCountdown function once to start the timer
     updateCountdown();
 
@@ -136,6 +146,7 @@ function setPlant(){
     
         plant.onclick = function() {
             show_pup();
+            document.getElementById("tnt_sound").play();
         };
     
         let num = getRandomTile();
@@ -164,6 +175,27 @@ function selectTile() {
     if(this == currentMoleTile) {
         score += 10;
         document.getElementById("score").innerText = score.toString(); // update the score
+        // document.getElementById("gold_sound").play();
+        let goldSoundEffect = document.getElementById("gold_sound");
+        goldSoundEffect.currentTime = 0; // Set playback position to 0 (beginning)
+        goldSoundEffect.play();
+            
+        //XP Sound when gold = 300 Gold.
+        if(score == 300) {
+            document.getElementById("xp_sound").play();
+            //console.log("Before");
+        }
+
+        // Back ground Music
+        if(score > 5000) {
+            document.getElementById("background2_sound").play();
+            document.getElementById("background2_sound").loop = true;
+            document.getElementById("background1_sound").pause();
+            document.getElementById("background1_sound").currentTime = 0;
+        } else {
+            document.getElementById("background1_sound").play();
+            document.getElementById("background1_sound").loop = true;
+        }
     }
     else if (this == currentPlantTile) {
         // document.getElementById("score").innerText = "GAME OVER: " + score.toString();

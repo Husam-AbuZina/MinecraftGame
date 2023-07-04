@@ -9,6 +9,8 @@
     </head>
 
     <body>
+        
+           
         <div class="container">
             <div class="top-right-box">
                 <p id="countdown" class="countDown">2:00</p>
@@ -17,7 +19,7 @@
             <div class="score-container">
                 <div class="score-gold-container">
                     <h2 id="score">0</h2>
-                    <img class="goldPiece" src="./gold.png" alt="Gold" onclick="show_pup()">
+                    <img class="goldPiece" id="goldPiece" src="./gold.png" alt="Gold" onclick="show_pup()">
                 </div>
                 <h2 class="highScore">High Score: <span id="highScore">0</span></h2>
             </div>
@@ -36,7 +38,19 @@
                 </div>
             </div>
 
+            
+                            <!----------------------------------  Sound  ---------------------------------->
 
+            <audio id="tnt_sound" src="Sound/MinecraftTNT.mp3" preload="auto"></audio>
+            <audio id="gold_sound" src="Sound/MinecraftItemDrop.mp3" preload="auto"></audio>
+            <audio id="xp_sound" src="Sound/MinecraftXP.mp3" preload="auto"></audio>
+
+            <audio autoplay loop id="background1_sound" src="Sound/WetHands.mp3" ></audio>
+            <audio autoplay loop id="background2_sound" src="Sound/MinecraftThemeSong.mp3" ></audio>
+            
+                            <!----------------------------------  Sound  ---------------------------------->
+
+            <!-- <audio controls loop autoplay class="background1_sound"  src="Sound/WetHands.mp3" ></audio> -->
         <script src="mole.js"></script>
     </body>
 </html>
