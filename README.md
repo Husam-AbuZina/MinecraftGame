@@ -26,3 +26,4 @@ A special Website that represents a simple game of the Minecraft realm, the goal
 - Add Visual Achievements 🏆.
 - Coockies API, Permnant HighScore for every Device.
 - Shared ScoreBoared Between users (Top users).
+- User Name highlight.
