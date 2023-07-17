@@ -24,4 +24,5 @@ A special Website that represents a simple game of the Minecraft realm, the goal
 ## Features to add:
 - Player Choices, like timer choose [1:00, 2:00, 3:00, 4:00, 5:00 ] ⏱️.
 - Add Visual Achievements 🏆.
-- Coockies, Permnant HighScore for every Device.
+- Coockies API, Permnant HighScore for every Device.
+- Shared ScoreBoared Between users (Top users).
