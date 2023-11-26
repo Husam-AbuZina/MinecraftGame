@@ -192,3 +192,52 @@ h2 {
 .background1_sound{
     opacity: 0.5;
 }
+/* ------------------------------------------- Choose Timer ----------------------------------------------- */
+
+.card_timer {
+    width: 400px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-item {
+    margin: 10px;
+}
+
+.button-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    height: 40px;
+}
+
+.button-item a:hover {
+    background-color: #34ff71;
+}
+
+ .minecraftLogo {
+    max-width: 300px;
+    max-height: 400px;
+    margin-bottom: 60px;
+ }
